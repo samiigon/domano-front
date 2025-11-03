@@ -1,0 +1,17 @@
+// 🎨 Paleta basada en la imagen proporcionada
+
+$color-primary-light: #b7e3c0;
+$color-primary-dark: #5a7c6e;
+$color-green-dark: #1c5e2e;
+$color-text-dark: #1a1a1a;
+$color-error: #c0392b;
+$color-gray: #6c757d;
+
+// Tipografía base
+$font-family-base: 'Poppins', sans-serif;
+
+body {
+  font-family: $font-family-base;
+  background: linear-gradient(90deg, $color-primary-light, $color-primary-dark);
+  color: $color-text-dark;
+}

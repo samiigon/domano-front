@@ -1,0 +1,44 @@
+@use '../../../styles/variables' as *;
+@use "sass:color";
+
+.register-container {
+  height: 100vh;
+  background: linear-gradient(90deg, $color-primary-light, $color-primary-dark);
+}
+
+.register-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  max-width: 900px;
+  width: 100%;
+}
+
+.left-panel {
+  flex: 1 1 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  .form-control {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.right-panel {
+  flex: 1 1 40%;
+  background-color: rgba(0, 0, 0, 0.05);
+  text-align: center;
+
+  .logo {
+    width: 150px;
+  }
+
+  .btn-register {
+    background-color: $color-green-dark;
+    color: white;
+    font-weight: bold;
+    &:hover {
+      background-color: color.adjust($color-green-dark, $lightness: -8%);
+    }
+  }
+}
+
+.text-welcome {
+  color: $color-text-dark;
+}

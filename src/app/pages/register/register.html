@@ -1,0 +1,53 @@
+<div class="register-container d-flex align-items-center justify-content-center">
+  <div class="register-card shadow rounded p-4 d-flex flex-wrap justify-content-between">
+
+    <!-- Panel Izquierdo -->
+    <div class="left-panel p-3">
+      <h2 class="fw-bold text-welcome mb-4">BIENVENIDO</h2>
+
+      <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+        <div class="mb-3">
+          <label class="form-label fw-semibold">NOMBRES</label>
+          <input type="text" name="nombres" class="form-control" [(ngModel)]="user.nombres" required />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">APELLIDOS</label>
+          <input type="text" name="apellidos" class="form-control" [(ngModel)]="user.apellidos" required />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">CÉDULA</label>
+          <input type="text" name="cedula" class="form-control" [(ngModel)]="user.cedula" required />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">FECHA DE NACIMIENTO</label>
+          <input type="text" name="fechaNacimiento" placeholder="DD/MM/AA" class="form-control" [(ngModel)]="user.fechaNacimiento" required />
+          <small class="text-danger">DD/MM/AA (Por favor valide el formato correspondiente)</small>
+        </div>
+      </form>
+    </div>
+
+    <!-- Panel Derecho -->
+    <div class="right-panel p-3 rounded">
+      <img src="assets/logo.png" alt="Logo DOMANO" class="logo img-fluid mb-3" />
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold">USUARIO</label>
+        <input type="text" name="usuario" class="form-control" [(ngModel)]="user.usuario" required />
+        <div *ngIf="invalidUser" class="text-danger small">Usuario Inválido</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold">CONTRASEÑA</label>
+        <input type="password" name="password" class="form-control" [(ngModel)]="user.password" required />
+        <div *ngIf="invalidPassword" class="text-danger small">
+          Debe incluir al menos un número y un carácter especial como */-#
+        </div>
+      </div>
+
+      <button (click)="onSubmit(registerForm)" class="btn btn-register w-100 mt-3">REGISTRAR USUARIO</button>
+    </div>
+  </div>
+</div>
